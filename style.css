@@ -30,7 +30,6 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    padding-left: 0em;
 }
 .nav-li{
     padding-inline: 1em;
@@ -58,12 +57,30 @@ h2 {
     padding:1em;
     background-color: rgba(0, 0, 0, 0.402);
 }
+.WhiteLine{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.54);
+    color: rgba(255, 255, 255, 0);
+    margin-bottom:3em;
+    margin-top:3em;
+}
+
+.info{
+    font-size:1.5rem;
+}
+.contA{
+    padding-bottom:3em;
+}
 .gameContainer{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+.underline {
+    text-decoration:underline;
+}
+
 .gamemodess{
     font-size:3rem;
 }
