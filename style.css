@@ -30,6 +30,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    padding-left: 0em;
 }
 .nav-li{
     padding-inline: 1em;
