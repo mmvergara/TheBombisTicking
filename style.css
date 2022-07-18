@@ -148,13 +148,17 @@ h5{
     
 }
 
-
+.align-left p{
+    text-align:left;
+}
 .ofp {
     opacity: none;
     pointer-events: none;
 }
 
-@media screen and (max-width: 400px){
+
+
+@media screen and (max-width: 650px){
     .nav-li {
         font-size: 1.2rem;
         padding: 1em 0em;
