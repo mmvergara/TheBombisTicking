@@ -30,6 +30,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    padding: 0em;
 }
 .nav-li{
     padding-inline: 1em;
@@ -193,6 +194,9 @@ h5{
     }
     .gamemodess{
         font-size: 1.4rem
+    }
+    #cdnimg{
+        width: 300px;
     }
 #bomba{
     width: 230px;
