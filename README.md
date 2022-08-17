@@ -1,5 +1,5 @@
 # The Bomb is Ticking
-TheBombisTicking is a simple game made using HTML,CSS,JAVASCRIPT and Jquery by Vergara, Mark Matthew
+TheBombisTicking is a simple game made using HTML,CSS,JAVASCRIPT and Jquery by Vergara, Mark Matthew <br/>
 one of my first projects that i enjoyed a lot making!
 
 # Website Link:
