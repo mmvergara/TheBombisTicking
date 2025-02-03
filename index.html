@@ -1,268 +1,428 @@
-
 <!-- Updated -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
     <title>Bomb Game by MMV</title>
-    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/903532794385432606/997315655537799238/Bomb.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="https://cdn.discordapp.com/attachments/903532794385432606/997315655537799238/Bomb.png"
+      type="image/x-icon"
+    />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body >
-    
-
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <div class="nav-container">
-            <ul class="nav-ul ">
-                <li class="nav-li DN" id="Play" ><a href="#/" class="Pfont"> >Play!</a></li>
-                <li class="nav-li " id="Tutorial-Documention"><a href="#/" class="Pfont" > >Tutorial/Documentation</a></li> 
-            </ul>
-        </div>
+      <div class="nav-container">
+        <ul class="nav-ul">
+          <li class="nav-li DN" id="Play">
+            <a href="#/" class="Pfont"> >Play!</a>
+          </li>
+          <li class="nav-li" id="Tutorial-Documention">
+            <a href="#/" class="Pfont"> >Tutorial/Documentation</a>
+          </li>
+        </ul>
+      </div>
     </header>
     <div class="mainContainer">
-        <h2 class="Pfont bomticking">THE BOMB IS TICKING!!! </h2>
+      <h2 class="Pfont bomticking">THE BOMB IS TICKING!!!</h2>
 
-        <div class="gameContainer">
-
-            <div class="version2">
-
-                <div class="tgamemodeContainer">
-                    <h4 >60s Gamemode <span><a href="#" class="how-to-play">How to play?</a></span></h4>
-                    <p>High Score: <span id="thscore"></span></p>
-                    <div class="btn-group" role="group">
-                        <button class="btn btn-danger" id="hundredSeconds">Play 60s</button>
-                    </div>
-                </div>
-
-                <div class="tactiveGameContainer DN">
-                    <p class="timer1Container"><span id="timerV2" class="Pfont">0</span></p>
-                    <div class="img-container">
-                        <img id='timgTicking' src="https://cdn.discordapp.com/attachments/903532794385432606/996998798863773787/Bomb2.gif" alt="N/A BombTicking" width="250" >
-                        <img id='timgBoom' class="DN" src="https://media.discordapp.net/attachments/903532794385432606/997256106650914926/boom.png" alt="N/A You lose!" width="250">
-                    </div>
-                    <h5 id="trandomToGuess"></h5>
-                    <input id="tuserInput" type="text" class="form-control" placeholder="Copy The Text Above!!!">
-                    <p>Score: <span class="tscore"></span></p>
-                </div>
-
-
+      <div class="gameContainer">
+        <div class="version2">
+          <div class="tgamemodeContainer">
+            <h4>
+              60s Gamemode
+              <span><a href="#" class="how-to-play">How to play?</a></span>
+            </h4>
+            <p>High Score: <span id="thscore"></span></p>
+            <div class="btn-group" role="group">
+              <button class="btn btn-danger" id="hundredSeconds">
+                Play 60s
+              </button>
             </div>
+          </div>
 
-
-
-            <div class="version1">
-                <div class="gamemodeContainer">
-                    <h4 >Classic Version <span><a href="#" class="how-to-play">How to play?</a></span></h4>
-                    <p>High Score: <span id="hscore"></span></p>
-                    <div class="btn-group" role="group">
-                        <button class="btn btn-success" id="easy">Easy</button>
-                        <button class="btn btn-primary" id="medium">Medium</button>
-                        <button class="btn btn-danger" id="hard">Hard</button>
-                        <button class="btn btn-warning" id="veryhard">Very Hard</button>
-                    </div>
-                </div>
-
-                <div class="activeGameContainer DN"> 
-                    <p class="timer1Container"><span id="timerV1" class="Pfont">0</span></p>
-                    <div class="img-container">
-                        <img id='imgTicking' src="https://cdn.discordapp.com/attachments/903532794385432606/996998798863773787/Bomb2.gif" alt="N/A BombTicking" width="250" >
-                        <img id='imgBoom' class="DN" src="https://cdn.discordapp.com/attachments/903532794385432606/996998798599524415/22boom.gif" alt="N/A You lose!" width="250">
-                    </div>
-                    <h5 id="randomToGuess"></h5>
-                    <input id="userInput" type="text" class="form-control" placeholder="Copy The Text Above!!!">
-                    <p>Score: <span id="score">0</span></p>
-                </div>
+          <div class="tactiveGameContainer DN">
+            <p class="timer1Container">
+              <span id="timerV2" class="Pfont">0</span>
+            </p>
+            <div class="img-container">
+              <img
+                id="timgTicking"
+                src="Bomb2.gif"
+                alt="N/A BombTicking"
+                width="250"
+              />
+              <img
+                id="timgBoom"
+                class="DN"
+                src="boom.png"
+                alt="N/A You lose!"
+                width="250"
+              />
             </div>
-
-        <p class="xpad paddinger"><br><br></p>
-
+            <h5 id="trandomToGuess"></h5>
+            <input
+              id="tuserInput"
+              type="text"
+              class="form-control"
+              placeholder="Copy The Text Above!!!"
+            />
+            <p>Score: <span class="tscore"></span></p>
+          </div>
         </div>
 
-
-
-
-
-        <div class="documentationContainer DN">
-
-            <div class="contactUS">
-                <img id="bomba" src="https://media.discordapp.net/attachments/903532794385432606/997315655537799238/Bomb.png" alt="N/A" width="300">
-                <p>ContactUs:</p>
-                <p>BombisTicking@gmail.com</p>
-                <p>0955-XXX-2389</p>    
+        <div class="version1">
+          <div class="gamemodeContainer">
+            <h4>
+              Classic Version
+              <span><a href="#" class="how-to-play">How to play?</a></span>
+            </h4>
+            <p>High Score: <span id="hscore"></span></p>
+            <div class="btn-group" role="group">
+              <button class="btn btn-success" id="easy">Easy</button>
+              <button class="btn btn-primary" id="medium">Medium</button>
+              <button class="btn btn-danger" id="hard">Hard</button>
+              <button class="btn btn-warning" id="veryhard">Very Hard</button>
             </div>
+          </div>
 
-            <div class="downloadGame" style="text-align:center ;">
-
-                <a class="btn btn-primary" href="https://www.mediafire.com/file/2zo5w1zlgccljkh/TBIT_Standalone.html/file" target="_blank"> Download (for Windows and Android)</a> <br>
-                <a class="btn btn-success" href="https://github.com/mmvergara/TheBombisTicking"  target="_blank">Github Repository (Source Code)</a>
+          <div class="activeGameContainer DN">
+            <p class="timer1Container">
+              <span id="timerV1" class="Pfont">0</span>
+            </p>
+            <div class="img-container">
+              <img
+                id="imgTicking"
+                src="https://cdn.discordapp.com/attachments/903532794385432606/996998798863773787/Bomb2.gif"
+                alt="N/A BombTicking"
+                width="250"
+              />
+              <img
+                id="imgBoom"
+                class="DN"
+                src="https://cdn.discordapp.com/attachments/903532794385432606/996998798599524415/22boom.gif"
+                alt="N/A You lose!"
+                width="250"
+              />
             </div>
-
-            <div class="info">
-<!-- Contact -->
-                <div class="contA">
-                    <h3 class="underline">The Bomb is Ticking!!!</h3>
-                    <p>The Bomb is ticking!!! is a simple game made by Vergara, Mark Matthew. <br>
-                        Will you be able to type the code before the bomb explodes? <br>
-                        Scroll down for the design process and Tutorial/Manual  <br>
-                        The Game Source code is on <a href="https://github.com/mmvergara/TheBombisTicking"  target="_blank">Github</a> so you can make your own version of the game.
-                    </p>
-                </div>
-<div class="WhiteLine">i</div>
-<!-- Contact -->
-
-                <h2 class="gamemodess Pfont underline">Design Process</h2>
-                <img id="mockUP" src="https://cdn.discordapp.com/attachments/903532794385432606/997337178294202479/Frame_1.png" alt="n/a" width="600">
-                <p>
-                    The Bomb is Ticking!!! The game is designed to pressure you and immerse you in some way of what <br> 
-                    Bomb Squad Technicians experience when performing their dangerous jobs. The user interface only contains few elements <br>
-                     for you to be able to focus on the game itself you need to match the random characters above <br>
-                    to gain points and reset the timer. Different Gamemodes comes with different features and rules.<br></p>
-<div class="WhiteLine">i</div>
-                <h4 class="Pfont gamemodess underline" >Manual / Tutorial</h4>
-                <p>The main challenge of the game is you need to match the random characters generated above in order to score, <br>
-                    the app will automatically detect if you matched the characters above and will immediately generate a <br> 
-                    new random symbols and clear the input field. 2 gamememodes are available in the game</p>
-                <img class="yep" src="https://cdn.discordapp.com/attachments/903532794385432606/997336064358359130/60s_gamemode.png" alt="m/a" width="400">
-                <p> 6️⃣0️⃣s Special gamemode where you need to score as much as you can in just 60s!</p>
-                <p><br><br></p>
-                <img class="yep" src="https://cdn.discordapp.com/attachments/903532794385432606/997335790495486082/Classic_Gamemode.png" alt="n/a" width="400">
-                <p>💣 Original game design/concept created with difficulties will scale ranging from <br> easy (more time / less characters) to hard (more characters / less time) </p>
-<div class="WhiteLine">i</div>
-
-                <h4 class="Pfont gamemodess underline" >Questionnaire</h4>
-
-
-                <div class="align-left">
-
-
-<!-- Portability -->
-                    <h2>Ease of Use and Usability</h2>
-                        <p>
-                            <strong>Are the controls/functions hard to navigate?</strong>  <br>
-                            There are only a few buttons to press for each function/game mode with labels 
-                            on them for different functions/gamemodes.<br><br>
-                            </p>
-                        <p>
-                            <strong>Does the game contain all of the information I need to play it?</strong>  <br>
-                            The game is well documented with tutorials and manuals. A bonus is a Github repository you 
-                            can check how the game is made.<br><br>
-                            </p>
-                        <p>
-                            <strong>Can the app be installed easily?</strong>  <br>
-                            The game can be played in a single HTML file that you can download from this website, it is lightweight and supports many platforms.<br><br>
-                        </p>
-                        <p>
-                            <strong>Can I play the game on multiple devices and platforms?</strong>  <br>
-                            Since the game only needs a single HTML file to run any device that can run an HTML file or access an internet 
-                            browser can play the game and also the game is on the website itself.<br><br>
-                            </p>
-                        <p>
-                            <strong>Does the game need some prerequisites before we can play the game?</strong>  <br>
-                            The only thing you need to play the game is software that can open HTML files or a Browser that pretty much everyone has.
-                            </p>
-<!-- Portability -->
-
-<!-- Gameplay -->
-                    <h2 >Gameplay</h2>
-                    <p>
-                        <strong>Can absolute beginners play the game?</strong>  <br>
-                        the game considers all types of players there’s a game mode for every type of player ranging 
-                        from beginners to pros.<br><br>
-                        </p>
-                    <p>
-                        <strong>Can the user easily comprehend how to play the game? </strong>  <br>
-                        The mechanics of the game is pretty intuitive almost everyone knows what happens to a bomb when a number is ticking right beside it, 
-                        tutorial anchor link is also available in the game interface before playing.<br><br>
-                        </p>
-                    <p>
-                        <strong>Can the user learn to use the game easily?</strong>  <br>
-                        A Manual and a tutorial that only contains a few paragraphs reading those will give the user a full understanding of the game.<br><br>
-                        </p>
-                    <p>
-                        <strong>Can the user use the game without much effort?</strong>  <br>
-                        The user only needs a keyboard and an internet browser to play the game and it is pretty lightweight that you don’t need a 
-                        lot of processing power to run it.<br><br>
-                        </p>
-                    <p>
-                        <strong>Does the game interface looks good? </strong>  <br>
-                        The game has a bit of an 8-bit theme on it when it comes to text and images and also a minimalistic and straightforward design 
-                        with an interactive bird background. For a simple game, I'd give it a 10/10!<br><br>
-                        </p>
-<!-- Gameplay -->
-
-<!-- Maintainability -->
-                    <h2>Game Design</h2>
-                    <p>
-                        <strong>Can the game be played for all people?</strong> <br>
-                        The game is free by default you can even modify the game yourself (Game Source Code) and if you can 
-                        type you can play the game! <br><br>
-                        </p>
-    
-                        <p>
-                            <strong>Is the design of the game related to its theme of it?</strong>  <br>
-                            The Bomb is ticking is a pretty simple game thus giving it an 8bit-game style element will prevail and 
-                            add a more nostalgic feel to it
-                            while still keeping the pressure element while playing it. <br><br>
-                        </p>
-            
-                        <p>
-                            <strong>Does the game have different game modes?</strong>  <br>
-                            The game has 2 game modes, First is the classic one where there is a timer in the bomb and you have to score to reset the timer and prevent the bomb from exploding.
-                            The second one is to score as much as you can before the bomb explodes in 60seconds! <br><br>
-                            </p>
-                        <p>
-                            <strong>Does the game sound fit the theme of the game?</strong>  <br>
-                            The game has a "pressure" element which uses a gradually accelerating tempo music like the one used on the 60seconds game
-                             mode of the game, thus making it a piece of good music for the game along with the metronome ticking sound effect.<br><br>
-                            </p>
-                        <p>
-                            <strong>What makes the game fun and addicting to play?</strong>  <br>
-                            The game immerses you in the pressure Bomb Squad Technicians feel when defusing a bomb in real life, they are under constant pressure and require a lot of focus to defuse it!
-                            </p>
-<!-- Maintainability -->
-<div class="WhiteLine">i</div>
-                </div>
-                <h4 class="Pfont gamemodess underline" >Developer Notes</h4>
-
-                                <h4><br><br><br>Whole Development Process Timelapse</h4>
-                                <iframe width="290" height="315" src="https://www.youtube.com/embed/vdllwa2bxEM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                                <p> <br>
-                                    The game source code is on github if you want to create a copy of the game for your own or contribute to the game itself. <br>
-                                    <a href="https://github.com/mmvergara/TheBombisTicking" target="_blank">Game Source Code (Github)</a> <br> <br>                                    
-                                    Main Programming Languages Used <br>
-                                    •	HTML – DOM <br>
-                                    •	CSS – STYLE <br>
-                                    •	JavaScript/Jquery – DOM manipulation and Game Logic <br> <br>
-                                    Functional Programming is the paradigm used to create this Game <br> <br>
-
-                                    Game logic – The game uses the javascript Math.random() function to create a random index and get the value of that <br>
-                                     index in an array where all possible characters are stored. different game modes will set different string lengths to <br>
-                                      be displayed and matched by the use in the game
-                                     </p>
-                                <img src="https://cdn.discordapp.com/attachments/903532794385432606/999647044950036520/random_char.png" alt="n/a" id="cdnimg" width="400">
-
-                                <p>
-                                    For the timer, it is set using the setInterval function and the function clears and resets after <br>
-                                    losing/finishing/gaining the point. Different game modes will set different parameters for the timer <br>
-                                    on how the timer will behave and how much time is given. Static files are managed in a Discord CDN where <br>
-                                    we can access images and sound files through the internet you can download them yourself by inspecting the elements of the html file. <br>
-                                    <a href="Vantajs" target="_blank">Vantajs</a> made the interactive flying birds background possible
-                                </p>
-            </div>
+            <h5 id="randomToGuess"></h5>
+            <input
+              id="userInput"
+              type="text"
+              class="form-control"
+              placeholder="Copy The Text Above!!!"
+            />
+            <p>Score: <span id="score">0</span></p>
+          </div>
         </div>
+
+        <p class="xpad paddinger"><br /><br /></p>
+      </div>
+
+      <div class="documentationContainer DN">
+        <div class="contactUS">
+          <img id="bomba" src="Bomb.png" alt="N/A" width="300" />
+          <p>ContactUs:</p>
+          <p>BombisTicking@gmail.com</p>
+          <p>0955-XXX-2389</p>
+        </div>
+
+        <div class="downloadGame" style="text-align: center">
+          <a
+            class="btn btn-primary"
+            href="https://www.mediafire.com/file/2zo5w1zlgccljkh/TBIT_Standalone.html/file"
+            target="_blank"
+          >
+            Download (for Windows and Android)</a
+          >
+          <br />
+          <a
+            class="btn btn-success"
+            href="https://github.com/mmvergara/TheBombisTicking"
+            target="_blank"
+            >Github Repository (Source Code)</a
+          >
+        </div>
+
+        <div class="info">
+          <!-- Contact -->
+          <div class="contA">
+            <h3 class="underline">The Bomb is Ticking!!!</h3>
+            <p>
+              The Bomb is ticking!!! is a simple game made by Vergara, Mark
+              Matthew. <br />
+              Will you be able to type the code before the bomb explodes? <br />
+              Scroll down for the design process and Tutorial/Manual <br />
+              The Game Source code is on
+              <a
+                href="https://github.com/mmvergara/TheBombisTicking"
+                target="_blank"
+                >Github</a
+              >
+              so you can make your own version of the game.
+            </p>
+          </div>
+          <div class="WhiteLine">i</div>
+          <!-- Contact -->
+
+          <h2 class="gamemodess Pfont underline">Design Process</h2>
+          <img
+            id="mockUP"
+            src="https://cdn.discordapp.com/attachments/903532794385432606/997337178294202479/Frame_1.png"
+            alt="n/a"
+            width="600"
+          />
+          <p>
+            The Bomb is Ticking!!! The game is designed to pressure you and
+            immerse you in some way of what <br />
+            Bomb Squad Technicians experience when performing their dangerous
+            jobs. The user interface only contains few elements <br />
+            for you to be able to focus on the game itself you need to match the
+            random characters above <br />
+            to gain points and reset the timer. Different Gamemodes comes with
+            different features and rules.<br />
+          </p>
+          <div class="WhiteLine">i</div>
+          <h4 class="Pfont gamemodess underline">Manual / Tutorial</h4>
+          <p>
+            The main challenge of the game is you need to match the random
+            characters generated above in order to score, <br />
+            the app will automatically detect if you matched the characters
+            above and will immediately generate a <br />
+            new random symbols and clear the input field. 2 gamememodes are
+            available in the game
+          </p>
+          <img
+            class="yep"
+            src="https://cdn.discordapp.com/attachments/903532794385432606/997336064358359130/60s_gamemode.png"
+            alt="m/a"
+            width="400"
+          />
+          <p>
+            6️⃣0️⃣s Special gamemode where you need to score as much as you can in
+            just 60s!
+          </p>
+          <p><br /><br /></p>
+          <img
+            class="yep"
+            src="https://cdn.discordapp.com/attachments/903532794385432606/997335790495486082/Classic_Gamemode.png"
+            alt="n/a"
+            width="400"
+          />
+          <p>
+            💣 Original game design/concept created with difficulties will scale
+            ranging from <br />
+            easy (more time / less characters) to hard (more characters / less
+            time)
+          </p>
+          <div class="WhiteLine">i</div>
+
+          <h4 class="Pfont gamemodess underline">Questionnaire</h4>
+
+          <div class="align-left">
+            <!-- Portability -->
+            <h2>Ease of Use and Usability</h2>
+            <p>
+              <strong>Are the controls/functions hard to navigate?</strong>
+              <br />
+              There are only a few buttons to press for each function/game mode
+              with labels on them for different functions/gamemodes.<br /><br />
+            </p>
+            <p>
+              <strong
+                >Does the game contain all of the information I need to play
+                it?</strong
+              >
+              <br />
+              The game is well documented with tutorials and manuals. A bonus is
+              a Github repository you can check how the game is made.<br /><br />
+            </p>
+            <p>
+              <strong>Can the app be installed easily?</strong> <br />
+              The game can be played in a single HTML file that you can download
+              from this website, it is lightweight and supports many
+              platforms.<br /><br />
+            </p>
+            <p>
+              <strong
+                >Can I play the game on multiple devices and platforms?</strong
+              >
+              <br />
+              Since the game only needs a single HTML file to run any device
+              that can run an HTML file or access an internet browser can play
+              the game and also the game is on the website itself.<br /><br />
+            </p>
+            <p>
+              <strong
+                >Does the game need some prerequisites before we can play the
+                game?</strong
+              >
+              <br />
+              The only thing you need to play the game is software that can open
+              HTML files or a Browser that pretty much everyone has.
+            </p>
+            <!-- Portability -->
+
+            <!-- Gameplay -->
+            <h2>Gameplay</h2>
+            <p>
+              <strong>Can absolute beginners play the game?</strong> <br />
+              the game considers all types of players there’s a game mode for
+              every type of player ranging from beginners to pros.<br /><br />
+            </p>
+            <p>
+              <strong
+                >Can the user easily comprehend how to play the game?
+              </strong>
+              <br />
+              The mechanics of the game is pretty intuitive almost everyone
+              knows what happens to a bomb when a number is ticking right beside
+              it, tutorial anchor link is also available in the game interface
+              before playing.<br /><br />
+            </p>
+            <p>
+              <strong>Can the user learn to use the game easily?</strong> <br />
+              A Manual and a tutorial that only contains a few paragraphs
+              reading those will give the user a full understanding of the
+              game.<br /><br />
+            </p>
+            <p>
+              <strong>Can the user use the game without much effort?</strong>
+              <br />
+              The user only needs a keyboard and an internet browser to play the
+              game and it is pretty lightweight that you don’t need a lot of
+              processing power to run it.<br /><br />
+            </p>
+            <p>
+              <strong>Does the game interface looks good? </strong> <br />
+              The game has a bit of an 8-bit theme on it when it comes to text
+              and images and also a minimalistic and straightforward design with
+              an interactive bird background. For a simple game, I'd give it a
+              10/10!<br /><br />
+            </p>
+            <!-- Gameplay -->
+
+            <!-- Maintainability -->
+            <h2>Game Design</h2>
+            <p>
+              <strong>Can the game be played for all people?</strong> <br />
+              The game is free by default you can even modify the game yourself
+              (Game Source Code) and if you can type you can play the game!
+              <br /><br />
+            </p>
+
+            <p>
+              <strong
+                >Is the design of the game related to its theme of it?</strong
+              >
+              <br />
+              The Bomb is ticking is a pretty simple game thus giving it an
+              8bit-game style element will prevail and add a more nostalgic feel
+              to it while still keeping the pressure element while playing it.
+              <br /><br />
+            </p>
+
+            <p>
+              <strong>Does the game have different game modes?</strong> <br />
+              The game has 2 game modes, First is the classic one where there is
+              a timer in the bomb and you have to score to reset the timer and
+              prevent the bomb from exploding. The second one is to score as
+              much as you can before the bomb explodes in 60seconds!
+              <br /><br />
+            </p>
+            <p>
+              <strong>Does the game sound fit the theme of the game?</strong>
+              <br />
+              The game has a "pressure" element which uses a gradually
+              accelerating tempo music like the one used on the 60seconds game
+              mode of the game, thus making it a piece of good music for the
+              game along with the metronome ticking sound effect.<br /><br />
+            </p>
+            <p>
+              <strong>What makes the game fun and addicting to play?</strong>
+              <br />
+              The game immerses you in the pressure Bomb Squad Technicians feel
+              when defusing a bomb in real life, they are under constant
+              pressure and require a lot of focus to defuse it!
+            </p>
+            <!-- Maintainability -->
+            <div class="WhiteLine">i</div>
+          </div>
+          <h4 class="Pfont gamemodess underline">Developer Notes</h4>
+
+          <h4><br /><br /><br />Whole Development Process Timelapse</h4>
+          <iframe
+            width="290"
+            height="315"
+            src="https://www.youtube.com/embed/vdllwa2bxEM"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+
+          <p>
+            <br />
+            The game source code is on github if you want to create a copy of
+            the game for your own or contribute to the game itself. <br />
+            <a
+              href="https://github.com/mmvergara/TheBombisTicking"
+              target="_blank"
+              >Game Source Code (Github)</a
+            >
+            <br />
+            <br />
+            Main Programming Languages Used <br />
+            • HTML – DOM <br />
+            • CSS – STYLE <br />
+            • JavaScript/Jquery – DOM manipulation and Game Logic <br />
+            <br />
+            Functional Programming is the paradigm used to create this Game
+            <br />
+            <br />
+
+            Game logic – The game uses the javascript Math.random() function to
+            create a random index and get the value of that <br />
+            index in an array where all possible characters are stored.
+            different game modes will set different string lengths to <br />
+            be displayed and matched by the use in the game
+          </p>
+          <img
+            src="https://cdn.discordapp.com/attachments/903532794385432606/999647044950036520/random_char.png"
+            alt="n/a"
+            id="cdnimg"
+            width="400"
+          />
+
+          <p>
+            For the timer, it is set using the setInterval function and the
+            function clears and resets after <br />
+            losing/finishing/gaining the point. Different game modes will set
+            different parameters for the timer <br />
+            on how the timer will behave and how much time is given. Static
+            files are managed in a Discord CDN where <br />
+            we can access images and sound files through the internet you can
+            download them yourself by inspecting the elements of the html file.
+            <br />
+            <a href="Vantajs" target="_blank">Vantajs</a> made the interactive
+            flying birds background possible
+          </p>
+        </div>
+      </div>
     </div>
-
-
-
-</body>
-<script src="index.js"></script>
-<script src=""></script>
+  </body>
+  <script src="index.js"></script>
+  <script src=""></script>
 </html>
